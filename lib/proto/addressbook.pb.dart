@@ -9,8 +9,6 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'google/protobuf/timestamp.pb.dart' as $0;
-
 import 'addressbook.pbenum.dart';
 
 export 'addressbook.pbenum.dart';
@@ -82,7 +80,6 @@ class Person extends $pb.GeneratedMessage {
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.O3)
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
     ..pc<Person_PhoneNumber>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'phones', $pb.PbFieldType.PM, subBuilder: Person_PhoneNumber.create)
-    ..aOM<$0.Timestamp>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastUpdated', subBuilder: $0.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -92,7 +89,6 @@ class Person extends $pb.GeneratedMessage {
     $core.int? id,
     $core.String? email,
     $core.Iterable<Person_PhoneNumber>? phones,
-    $0.Timestamp? lastUpdated,
   }) {
     final _result = create();
     if (name != null) {
@@ -106,9 +102,6 @@ class Person extends $pb.GeneratedMessage {
     }
     if (phones != null) {
       _result.phones.addAll(phones);
-    }
-    if (lastUpdated != null) {
-      _result.lastUpdated = lastUpdated;
     }
     return _result;
   }
@@ -162,17 +155,6 @@ class Person extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(4)
   $core.List<Person_PhoneNumber> get phones => $_getList(3);
-
-  @$pb.TagNumber(5)
-  $0.Timestamp get lastUpdated => $_getN(4);
-  @$pb.TagNumber(5)
-  set lastUpdated($0.Timestamp v) { setField(5, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasLastUpdated() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearLastUpdated() => clearField(5);
-  @$pb.TagNumber(5)
-  $0.Timestamp ensureLastUpdated() => $_ensure(4);
 }
 
 class AddressBook extends $pb.GeneratedMessage {

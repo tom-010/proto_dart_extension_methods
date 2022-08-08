@@ -16,7 +16,6 @@ const Person$json = const {
     const {'1': 'id', '3': 2, '4': 1, '5': 5, '10': 'id'},
     const {'1': 'email', '3': 3, '4': 1, '5': 9, '10': 'email'},
     const {'1': 'phones', '3': 4, '4': 3, '5': 11, '6': '.tutorial.Person.PhoneNumber', '10': 'phones'},
-    const {'1': 'last_updated', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'lastUpdated'},
   ],
   '3': const [Person_PhoneNumber$json],
   '4': const [Person_PhoneType$json],
@@ -42,7 +41,7 @@ const Person_PhoneType$json = const {
 };
 
 /// Descriptor for `Person`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List personDescriptor = $convert.base64Decode('CgZQZXJzb24SEgoEbmFtZRgBIAEoCVIEbmFtZRIOCgJpZBgCIAEoBVICaWQSFAoFZW1haWwYAyABKAlSBWVtYWlsEjQKBnBob25lcxgEIAMoCzIcLnR1dG9yaWFsLlBlcnNvbi5QaG9uZU51bWJlclIGcGhvbmVzEj0KDGxhc3RfdXBkYXRlZBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSC2xhc3RVcGRhdGVkGlUKC1Bob25lTnVtYmVyEhYKBm51bWJlchgBIAEoCVIGbnVtYmVyEi4KBHR5cGUYAiABKA4yGi50dXRvcmlhbC5QZXJzb24uUGhvbmVUeXBlUgR0eXBlIisKCVBob25lVHlwZRIKCgZNT0JJTEUQABIICgRIT01FEAESCAoEV09SSxAC');
+final $typed_data.Uint8List personDescriptor = $convert.base64Decode('CgZQZXJzb24SEgoEbmFtZRgBIAEoCVIEbmFtZRIOCgJpZBgCIAEoBVICaWQSFAoFZW1haWwYAyABKAlSBWVtYWlsEjQKBnBob25lcxgEIAMoCzIcLnR1dG9yaWFsLlBlcnNvbi5QaG9uZU51bWJlclIGcGhvbmVzGlUKC1Bob25lTnVtYmVyEhYKBm51bWJlchgBIAEoCVIGbnVtYmVyEi4KBHR5cGUYAiABKA4yGi50dXRvcmlhbC5QZXJzb24uUGhvbmVUeXBlUgR0eXBlIisKCVBob25lVHlwZRIKCgZNT0JJTEUQABIICgRIT01FEAESCAoEV09SSxAC');
 @$core.Deprecated('Use addressBookDescriptor instead')
 const AddressBook$json = const {
   '1': 'AddressBook',
