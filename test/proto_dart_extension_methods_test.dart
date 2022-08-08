@@ -6,6 +6,7 @@ import 'package:proto_dart_extension_methods/proto/addressbook.pb.dart';
 void main() {
 
   late Person person;
+  late ModelRegistry registry; 
 
   setUp(() {
 	person = Person(
@@ -19,6 +20,9 @@ void main() {
 			)
 		]
 	);
+
+	registry = ModelRegistry();
+	registry.register((Person p) => p.model);
 
   });
 
@@ -35,5 +39,18 @@ void main() {
 	int res = person.idPlusOne();
 	expect(person.id, 124);
 	expect(res, 124);
+  });
+
+  test('implements model interface', () {
+	  Model m = registry.toModel(person);
+	  expect(m.validate().length, 1);
+  });
+
+  test('static methods', () {
+  
+  });
+
+  test('dependency usage', () {
+
   });
 }
