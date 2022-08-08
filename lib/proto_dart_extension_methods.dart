@@ -12,16 +12,15 @@ class Model<T extends GeneratedMessage> {
 	});
 }
 
-
-
 // ModelRegistry converts a protobuf message T to a Model<T>
 // The user has to register it first in main.
 class ModelRegistry {
 
 	final Map<Type, dynamic> _entries = {};
+
+	static final ModelRegistry instance = ModelRegistry();
 	
 	register<T extends GeneratedMessage>(Model<T> Function(T) toModel) {
-		print(T);
 		_entries[T] = toModel;
 	}
 
@@ -32,10 +31,13 @@ class ModelRegistry {
 	}
 }
 
+///////////////
+
 
 extension PersonMethods on Person {
 
-	
+	static String _nickname = "";
+
 	String get greeting {
 		return 'Hello $name';
 	}
@@ -61,20 +63,18 @@ extension PersonMethods on Person {
 
 	}
 
-	// do this in the static context while 
-	// registration of the model
-	Model<Person> get model {
+	static Model<Person> toModel(Person p) {
 		return Model<Person>(
-			save: save,
-			validate: validate,
-			delete: delete,
+			save: p.save,
+			validate: p.validate,
+			delete: p.delete,
 		);
 	}
+
+	static String getSomeName() {
+		return 'tom';
+	}
+
 }
 
 
-// extension NumberParsing on String {
-//  int parseInt() {
-//    return int.parse(this);
-//  }
-// }

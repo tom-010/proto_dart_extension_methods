@@ -21,8 +21,8 @@ void main() {
 		]
 	);
 
-	registry = ModelRegistry();
-	registry.register((Person p) => p.model);
+	registry = ModelRegistry.instance
+		..register(PersonMethods.toModel);
 
   });
 
@@ -47,7 +47,7 @@ void main() {
   });
 
   test('static methods', () {
-  
+	  expect(PersonMethods.getSomeName(), 'tom');
   });
 
   test('dependency usage', () {
